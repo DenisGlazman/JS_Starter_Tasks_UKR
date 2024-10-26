@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //isPalindrom
+        
+        function isPalindrom(str){
+        let wordArr=str.split("");
+        let temp=[];
+        let j;
+        for(j=0;j<wordArr.length;j++){
+            temp.push(wordArr[j]);
+            
+
+        }
+         
+        let wordReverseArr = temp.reverse();
+        let i;
+        for(i=0;i<wordArr.length;i++){
+            if(wordArr[i] === wordReverseArr[i]){
+                console.log("yes")
+                return true;
+                
+            }
+            console.log("no")
+            return false
+            
+        }
+        }
+        isPalindrom("шабаoooo");
+        isPalindrom("шабаш");
+        isPalindrom("123");
+        isPalindrom("1234554321");
+
+       
+
+
+    </script>
+</body>
+</html>

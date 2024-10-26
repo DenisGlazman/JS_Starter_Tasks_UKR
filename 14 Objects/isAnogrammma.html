@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isAnogramma(a,b){
+            let va = [];
+            va = a.split("").sort();
+            console.log(va)
+            let vb = [];
+            vb = b.split("").sort();
+            console.log(vb)
+            if(va.length !== vb.length){
+                console.log("Different length of words")
+            }else{
+                for(let i=0;i<va.length;i++){
+                    
+                    if(va[i]===vb[i]&& i==va.length-1){
+                    console.log("This is anagramma! ")
+
+                    }else if (va[i]!==vb[i]){ 
+                        console.log("This ISN'T anagramma! ")
+                        return;
+                    }
+                
+                    }
+            }}
+
+        
+isAnogramma("австралопитек","ватерполистка");
+isAnogramma("12345","54321");
+isAnogramma(" "," ");
+isAnogramma("австралопитеc","ватерполистка");
+isAnogramma("австралопитек","ватестка");
+isAnogramma("VASYA","PETYA")
+    </script>
+</body>
+</html>
