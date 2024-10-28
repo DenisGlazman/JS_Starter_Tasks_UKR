@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function doQuestions(que, a, b, c, d) {
+    return {
+        que: que,
+        ans: [
+            { letter: 'A', a: a },
+            { letter: 'B', b: b },
+            { letter: 'C', c: c },
+            { letter: 'D', d: d }
+        ]
+    };
+}
+
+function letYesOrNo(yes, no) {
+    return {
+        answer: [
+            { letter: 'A', text: yes },
+            { letter: 'B', text: no }
+        ]
+    };
+}
+
+const yesNoOptions = letYesOrNo("Yes", "No");
+
+const que1 = doQuestions("Какое самое маленькое целое положительное число?", "0", "1", "2", "-1");
+const que2 = doQuestions("Как называется самая большая планета Солнечной системы?", "Земля", "Марс", "Юпитер", "Венера");
+const que3 = doQuestions("Какой элемент таблицы Менделеева обозначается символом O?", "Углерод", "Азот", "Водород", "Кислород");
+const que4 = doQuestions("В каком году распался Советский Союз?", "1989", "1990", "1991", "1992");
+const que5 = doQuestions("Как называется крупнейший остров на Земле?", "Мадагаскар", "Гренландия", "Новая Гвинея", "Калимантан");
+
+let correctAnswer = ["B", "C", "D", "C", "B"];
+let allQuestions = [que1, que2, que3, que4, que5];
+
+let count = 0;
+let prize = 0;
+
+for (let i = 0; i < allQuestions.length; i++) {
+    let answer = prompt(
+        `${allQuestions[i].que}\nВарианты ответов:\n` +
+        `${allQuestions[i].ans[0].letter} : ${allQuestions[i].ans[0].a}\n` +
+        `${allQuestions[i].ans[1].letter} : ${allQuestions[i].ans[1].b}\n` +
+        `${allQuestions[i].ans[2].letter} : ${allQuestions[i].ans[2].c}\n` +
+        `${allQuestions[i].ans[3].letter} : ${allQuestions[i].ans[3].d}\n`, "A"
+    );
+
+    if (answer === correctAnswer[i]) {
+        count += 1;
+        prize = count * 500;
+
+        if (count === allQuestions.length) {
+            alert(`Поздравляем! Вы ответили на все вопросы! Ваш приз: ${prize} грн.`);
+            break;
+        }
+
+        let continueGame = prompt(`Поздравляю! Вы выиграли ${prize} грн! Хотите продолжить?\n` +
+            `${yesNoOptions.answer[0].letter}: ${yesNoOptions.answer[0].text}\n` +
+            `${yesNoOptions.answer[1].letter}: ${yesNoOptions.answer[1].text}`, "A"
+        );
+
+        if (continueGame === 'B') {
+            alert(`Благодарим за участие! Игра окончена. Ваш выигрыш: ${prize} грн.`);
+            break;
+        }
+    } else {
+        if (count === 0) {
+            alert("Неправильный ответ! Игра окончена.");
+        } else {
+            alert(`Неправильный ответ! Игра окончена. Ваш выигрыш: ${prize} грн.`);
+        }
+        break;
+    }
+}
+
+        
+
+
+        
+        
+
+
+    </script>
+</body>
+</html>
