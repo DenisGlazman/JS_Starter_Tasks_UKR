@@ -33,7 +33,7 @@
         const que4 = doQuestions("В каком году распался Советский Союз?","1989","1990","1991","1992")
         const que5 = doQuestions("Как называется крупнейший остров на Земле?","Мадагаскар","Гренландия","Новая Гвинея","Калимантан")
 
-        let rightAnswer = ["B","C","D","C","B"]
+        let correctAnswer = ["B","C","D","C","B"]
 
         let allQuestions = [que1,que2,que3,que4,que5];
         let i;
@@ -47,7 +47,7 @@
                             ${allQuestions[i].ans[3].letter} : ${allQuestions[i].ans[3].d} 
                             `,0);
 
-if(answr === rightAnswer[i]){
+if(answr === correctAnswer[i]){
     count++;
     if(count===allQuestions.length){
         lalert(`Поздравляем! Вы успешно ответили на все вопросы! Вы наш новый чемпион! Ваш приз составляет ${prize}`);
@@ -60,9 +60,9 @@ if(answr === rightAnswer[i]){
         alert(`Благодарим за участие! Игра окончена - получите свой выигрыш ${prize}`)
         break;}
     
-    }else if(answr !== rightAnswer[i]&&count==0){ alert("Не правильный ответ! Игра окончена!");
+    }else if(answr !== correctAnswer[i]&&count==0){ alert("Не правильный ответ! Игра окончена!");
             break;
-    }else if (answr !== rightAnswer[i]&&count>0){ alert(`Не правильный ответ! Игра окончена - получите свой выигрыш ${prize}!`);
+    }else if (answr !== correctAnswer[i]&&count>0){ alert(`Не правильный ответ! Игра окончена - получите свой выигрыш ${prize}!`);
             break;}}
                      
                     
