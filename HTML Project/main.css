@@ -1,4 +1,6 @@
-
+header{
+    margin-top: 40px;
+}
 body{
     background-color: black;
     width: 1440px;
@@ -127,8 +129,12 @@ margin-left: 40px;
     text-align: left;
     }
 .text-digits .text{
-    font: weight 50px;;
+    font: weight 50px;
     color: black;
+}
+.text-digits .digits{
+    font: weight 50px;
+
 }
 .text-digits h3{
     color: white;
